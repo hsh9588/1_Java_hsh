@@ -2,7 +2,7 @@ package edu.kh.op.ex;
 
 import java.util.Scanner; // Scanner import
 
-public class OperatoerExample1 {
+public class OperatorExample1 {
 	
 	public static void main(String[] args) {
 		

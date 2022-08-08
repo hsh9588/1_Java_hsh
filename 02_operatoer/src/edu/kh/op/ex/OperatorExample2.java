@@ -1,6 +1,6 @@
 package edu.kh.op.ex;
 
-public class OperatoerExample2 {
+public class OperatorExample2 {
 	
 	public static void main(String[] args) {
 		
