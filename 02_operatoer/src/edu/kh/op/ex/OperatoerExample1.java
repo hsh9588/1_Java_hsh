@@ -37,6 +37,7 @@ public class OperatoerExample1 {
 		
 		// ex
 		System.out.println("a\nb\nc");
+		System.out.println("a\nb\nc");
 		
 		
 		
