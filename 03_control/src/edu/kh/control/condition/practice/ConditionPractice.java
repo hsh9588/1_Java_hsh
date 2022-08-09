@@ -17,8 +17,24 @@ public class ConditionPractice {
 			System.out.println("짝수입니다.");
 		} else {
 			System.out.println("홀수입니다.");
-		}			
+		}		
+		/* 풀이
+		 
+		String result;
 		
+		if (input > 0) { // 양수
+			if (input % 2 == 0) {
+				result = "짝수 입니다.";
+			} else {
+				result = "홀수 입니다.";
+			}
+			
+		} else {
+			result = "양수만 입력해주세요.";
+		}
+		
+		System.out.println(result);
+		*/
 	}	
 	
 	
@@ -33,16 +49,22 @@ public class ConditionPractice {
 		int eng = sc.nextInt();
 		
 		System.out.print("수학점수 : ");
-		int mat = sc.nextInt();
+		int math = sc.nextInt();
 		
-		int sum = kor + eng + mat;
+		int sum = kor + eng + math;
 		double avg = sum / 3.0;
 		
-		if (avg >= 60.0 && kor >= 40 && eng >= 40 && mat >= 40) {
-			System.out.printf("국어 : %d\n수학 : %d\n영어 : %d\n합계 : %d\n평균 : %.1f\n축하합니다, 합격입니다!\n", kor, mat, eng, sum, avg );
+		if (avg >= 60.0 && kor >= 40 && eng >= 40 && math >= 40) {
+			System.out.printf("국어 : %d\n", kor);
+			System.out.printf("수학 : %d\n", math);
+			System.out.printf("영어 : %d\n", eng);
+			System.out.printf("합계 : %d\n", sum);
+			System.out.printf("평균 : %.1f\n", avg);
+					
+			System.out.println("축하합니다, 합격입니다!");
 		} else {
 			System.out.println("불합격입니다.");
-		}
+		}		
 				
 	}
 	
@@ -82,27 +104,23 @@ public class ConditionPractice {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("키(m)를 입력해 주세요 : ");
-		double m = sc.nextDouble();
+		double height = sc.nextDouble();
 		
 		System.out.print("몸무게(kg)를 입력해 주세요 : ");
-		double kg = sc.nextDouble();
+		double weight = sc.nextDouble();
 		
-		double BMI = kg / (m * m);
+		double bmi = weight / (height * height);
+		System.out.println("bmi 지수 : " + bmi);
 		
-		if (BMI < 18.5) {
-			System.out.println("BMI 지수 : " + BMI);
+		if (bmi < 18.5) {
 			System.out.println("저체중");
-		} else if (BMI < 23) {
-			System.out.println("BMI 지수 : " + BMI);
+		} else if (bmi < 23) {
 			System.out.println("정상체중");
-		} else if (BMI < 25) {
-			System.out.println("BMI 지수 : " + BMI);
+		} else if (bmi < 25) {
 			System.out.println("과체중");			
-		} else if (BMI < 30) {
-			System.out.println("BMI 지수 : " + BMI);
+		} else if (bmi < 30) {
 			System.out.println("비만");			
 		} else {
-			System.out.println("BMI 지수 : " + BMI);
 			System.out.println("고도비만");			
 		}	
 		
@@ -120,41 +138,62 @@ public class ConditionPractice {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("중간 고사 점수 : ");
-		int a_point = sc.nextInt();
+		double midTerm = sc.nextInt();
 		
 		System.out.print("기말 고사 점수 : ");
-		int b_point = sc.nextInt();
+		double finalTerm = sc.nextInt();
 		
 		System.out.print("과제 점수 : ");
-		int c_point = sc.nextInt();
+		double report = sc.nextInt();
 		
 		System.out.print("출석 횟수 : ");
-		int d_point = sc.nextInt();
+		double attendance = sc.nextInt();
 		
-		double sum = (a_point * 0.2) + (b_point * 0.3) + (c_point * 0.3) + (d_point * 1.0);
+		midTerm *= 0.2;
+		finalTerm *= 0.3;
+		report *= 0.3;
+		attendance *= 1.0;
+		
+		double sum = midTerm + finalTerm + report + attendance;
 	
+		System.out.println("============= 결과 ===============");
 		
-		if (d_point <= 10) {
-			System.out.printf("Fail [출석 횟수 부족 (%d/20)]", d_point);
+		if (attendance <= 14) {
+			System.out.printf("Fail [출석 횟수 부족 (%d/20)]", (int)attendance);
 		} else if (sum < 70) {
-			System.out.println("중간 고사 점수(20) : " + (a_point * 0.2));
-			System.out.println("기말 고사 점수(30) : " + (b_point * 0.3));
-			System.out.println("과제 점수(30) : " + (c_point * 0.3));
-			System.out.println("출석 점수(20) : " + (d_point * 1.0));
-			System.out.println("총점 : " + sum);
+			System.out.println("중간 고사 점수(20) : " + midTerm);
+			System.out.println("기말 고사 점수(30) : " + finalTerm);
+			System.out.println("과제 점수    (30) : " + report);
+			System.out.println("출석 점수    (20) : " + attendance);
+			System.out.println("총        점     : " + sum);
 			System.out.println("Fail [점수 미달]");
 		} else {
-			System.out.println("중간 고사 점수(20) : " + (a_point * 0.2));
-			System.out.println("기말 고사 점수(30) : " + (b_point * 0.3));
-			System.out.println("과제 점수(30) : " + (c_point * 0.3));
-			System.out.println("출석 점수(20) : " + (d_point * 1.0));
-			System.out.println("총점 : " + sum);
-			System.out.println("Pass");
+			System.out.println("중간 고사 점수(20) : " + midTerm);
+			System.out.println("기말 고사 점수(30) : " + finalTerm);
+			System.out.println("과제 점수    (30) : " + report);
+			System.out.println("출석 점수    (20) : " + attendance);
+			System.out.println("총        점     : " + sum);
+			System.out.println("PASS");
+		}		
+		
+		/* 풀이
+		  
+		if (attendance <= 20 * (1 - 0.3)) {
+			System.out.printf("Fail [출석 횟수 부족 (%d/20)]", (int)attendance);
+		} else {
+			System.out.println("중간 고사 점수(20) : " + midTerm);
+			System.out.println("기말 고사 점수(30) : " + finalTerm);
+			System.out.println("과제 점수    (30) : " + report);
+			System.out.println("출석 점수    (20) : " + attendance);
+			System.out.println("총        점     : " + sum);	
+			
+			if (sum >= 70) {
+				System.out.println("PASS");
+			} else {
+				System.out.println("PASS");
+			}
 		}
-		
-		
-		
-		
+		*/
 	}
 
 }
