@@ -26,6 +26,8 @@ public class ConditionRun {
 //		switchEx.ex4();
 		switchEx.ex5();
 		
+		
+		
 	}
 
 }
