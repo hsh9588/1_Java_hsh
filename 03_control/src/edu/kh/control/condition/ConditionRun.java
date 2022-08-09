@@ -5,7 +5,7 @@ public class ConditionRun {
 	
 	public static void main(String[] args) {
 		
-//		ConditionExample ex = new ConditionExample();
+		ConditionExample ex = new ConditionExample();
 		
 		// 커서놓고 -> ctrl + / == 주석
 //		ex.test1();
@@ -22,7 +22,9 @@ public class ConditionRun {
 		
 //		switchEx.ex1();
 //		switchEx.ex2();
-		switchEx.ex3();
+//		switchEx.ex3();
+//		switchEx.ex4();
+		switchEx.ex5();
 		
 	}
 

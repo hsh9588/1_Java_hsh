@@ -115,7 +115,8 @@ public class SwitchExample {
 		
 		int result;
 		
-		switch (input) {
+		switch (input) { // switch의 식은 int, String만 가능
+		
 		case "김밥": result = 3000; break;
 		case "라면": result = 4000; break;
 		case "샌드위치": result = 5000; break;
@@ -127,14 +128,117 @@ public class SwitchExample {
 			System.out.println("잘못 입력하셨습니다.");
 		} else {
 			System.out.printf("%s은 %d원 입니다.\n", input, result);
-		}
-		
-		
+		}		
 		
 	}
 	
+	public void ex4() {
+		
+		// 산술 연산 계산기 만들기
+		// 두 정수와 1개의 연산자 ( +, -, *, /, % (String) ) 를 입력 받아서
+		// 연산 결과를 출력
+		// 단, 나누기( / ) 연산 시 0으로는 나눌 수 없도록 한다.
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수1 입력 : ");
+		int num1 = sc.nextInt();
+		
+		System.out.print("연산자 입력 : ");
+		String op  = sc.next();
+		
+		System.out.print("정수2 입력 : ");
+		int num2 = sc.nextInt();
+		
+		// [실행화면]
+		// 정수1 입력 : 5
+		// 연산자 입력 : +
+		// 정수2 입력 : 4
+		// 5 + 4 = 9
+		
+		// [실행화면]
+		// 정수1 입력 : 5
+		// 연산자 입력 : /
+		// 정수2 입력 : 0
+		// 0으로는 나눌 수 없습니다.
+		
+		// [실행화면]
+		// 정수1 입력 : 5
+		// 연산자 입력 : @
+		// 정수2 입력 : 3
+		// 존재하지 않는 연산자 입니다.
+		
+//		int result;
+//		
+//		switch (op) {
+//		case "+": result = num1 + num2; break;
+//		case "-": result = num1 - num2; break;
+//		case "*": result = num1 * num2; break;
+//		case "/":
+//			if (num2 ==0) {
+//				System.out.println("0으로는 나눌 수 없습니다.");
+//			} else {
+//				result = num1 / num2;
+//			}; break;
+//		case "%": result = num1 % num2; break;
+//		default: System.out.println("존재하지 않는 연산자 입니다.");
+//		}
+//		
+//		System.out.printf("%d %s %d = %d\n", num1, op, num2, result);				
+		
+		
+		switch (op) {
+		case "+": System.out.printf("%d %s %d = %d\n", num1, op, num2, (num1 + num2)); break;
+		case "-": System.out.printf("%d %s %d = %d\n", num1, op, num2, (num1 - num2)); break;
+		case "*": System.out.printf("%d %s %d = %d\n", num1, op, num2, (num1 * num2)); break;
+		case "/":
+			if (num2 == 0) {
+				System.out.println("0으로 나눌 수 없습니다.");
+			} else {
+				System.out.printf("%d %s %d = %d\n", num1, op, num2, (num1 / num2));				
+			}
+			 break;
+		case "%": 
+			if (num2 == 0) {
+			System.out.println("0으로 나눌 수 없습니다.");
+			} else {
+			System.out.printf("%d %s %d = %d\n", num1, op, num2, (num1 % num2));				
+			}
+			 break;
+		default: System.out.println("존재하지 않는 연산자 입니다.");
+		}
+	}
 	
 	
+	public void ex5() {
+		
+		// switch문의 break 역할
+		
+		// 계절 판별(switch 버전)
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("달 입력 : ");
+		int month = sc.nextInt();
+		
+		String season;
+		
+		// switch문에서 break는
+		// "해당 case를 수행한 후 멈춰라" 라는 뜻
+		
+		// break가 없을 경우
+		// -> 다음 case가 연달아서 수행된다!
+		
+		switch (month) {
+		case 3 : case 4 : case 5 : season = "봄"; break;
+		case 6 : case 7 : case 8 : season = "여름"; break;
+		case 9 : case 10: case 11: season = "가을"; break;
+		case 12: case 1 : case 2 : season = "겨울"; break;		
+		default: season = "잘못 입력 하셨습니다.";
+		}
+		
+		System.out.println(season);
+	}
 	
 	
 	
