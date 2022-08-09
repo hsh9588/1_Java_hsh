@@ -117,10 +117,10 @@ public class SwitchExample {
 		
 		switch (input) { // switch의 식은 int, String만 가능
 		
-		case "김밥": result = 3000; break;
-		case "라면": result = 4000; break;
-		case "샌드위치": result = 5000; break;
-		case "짬뽕": result = 10000; break;
+		case "김밥"   : result = 3000 ; break;
+		case "라면"   : result = 4000 ; break;
+		case "샌드위치": result = 5000 ; break;
+		case "짬뽕"   : result = 10000; break;
 		default: result = -1; // 잘못 입력하면 -1 이라고 의미 부여
 		}
 		
@@ -179,8 +179,16 @@ public class SwitchExample {
 //				System.out.println("0으로는 나눌 수 없습니다.");
 //			} else {
 //				result = num1 / num2;
-//			}; break;
-//		case "%": result = num1 % num2; break;
+//			} 
+//			break;
+//		case "%":
+//			if (num2 ==0) {
+//				System.out.println("0으로는 나눌 수 없습니다.");
+//			} else {
+//				result = num1 % num2;
+//			} 
+//			break;
+//			
 //		default: System.out.println("존재하지 않는 연산자 입니다.");
 //		}
 //		
