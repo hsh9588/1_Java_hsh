@@ -208,37 +208,27 @@ public class LoopPractice {
 		System.out.print("정수 입력 : ");
 		int star = sc.nextInt();
 
-		for (int row = star; row >= 1; row--) {
-			for (int col = 1; col <= 2 * star; col++) {
-				if (row >= col || 10-row <= col) {
-					System.out.print(" ");
-				} else {
-					System.out.print("*");
-				}
+//		for (int row = star; row >= 1; row--) {
+//			for (int col = 1; col <= 2 * star; col++) {
+//				if (row >= col || 10-row <= col) {
+//					System.out.print(" ");
+//				} else {
+//					System.out.print("*");
+//				}
+//			}
+//			System.out.println();
+//		}		
+	
+		for (int row = 1; row <= star; row++) {
+			for (int col = 1; col <= star - row; col++) {	
+				System.out.print(" ");
+			}
+			for (int i = 1 ; i <= 2 * row - 1; i++) {
+				System.out.print("*");
 			}
 			System.out.println();
-		}		
-	
-//		for (int row = 1; row <= star; row++) {
-//			for (int col = 0; col <= star - row; col++) {	
-//				System.out.print(" ");
-//			}
-//			for (int i = 0 ; i < 2 * row - 1; i++) {
-//				System.out.print("*");
-//			}
-//			System.out.println();
-//		}
+		}
 
-//		for (int i = 1; i < star + 1; i++) {
-//			for (int j = 0; j < star - i; j++) {
-//				System.out.print("-");
-//			}
-//			for (int k = 0; k < 2 * i - 1; k++) {
-//				System.out.print("+");
-//			}
-//			System.out.println();
-//		}
-//
 	}
 
 	public void practice12() {
