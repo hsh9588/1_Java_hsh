@@ -170,7 +170,7 @@ public class LoopPractice {
 				if (row <= col) {
 					System.out.print("*");
 				} else {
-					System.out.print(" ");					
+					System.out.print(" ");
 				}
 			}
 			System.out.println();
@@ -179,7 +179,7 @@ public class LoopPractice {
 	}
 
 	public void practice10() {
-		
+
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("정수 입력 : ");
@@ -191,9 +191,9 @@ public class LoopPractice {
 			}
 			System.out.println();
 		}
-		
+
 		for (int row = 1; row <= star; row++) {
-			for (int col = row; col <= star-1; col++) {
+			for (int col = row; col <= star - 1; col++) {
 				System.out.print("*");
 			}
 			System.out.println();
@@ -202,29 +202,47 @@ public class LoopPractice {
 	}
 
 	public void practice11() {
-		
+
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("정수 입력 : ");
 		int star = sc.nextInt();
 
 		for (int row = star; row >= 1; row--) {
-			for (int col = 1; col <= star; col++) {
-				if (row <= col) {
+			for (int col = 1; col <= 2 * star; col++) {
+				if (row >= col || 10-row <= col) {
 					System.out.print(" ");
 				} else {
-					System.out.print("*");					
+					System.out.print("*");
 				}
 			}
 			System.out.println();
-		}
+		}		
+	
+//		for (int row = 1; row <= star; row++) {
+//			for (int col = 0; col <= star - row; col++) {	
+//				System.out.print(" ");
+//			}
+//			for (int i = 0 ; i < 2 * row - 1; i++) {
+//				System.out.print("*");
+//			}
+//			System.out.println();
+//		}
 
-		
-
+//		for (int i = 1; i < star + 1; i++) {
+//			for (int j = 0; j < star - i; j++) {
+//				System.out.print("-");
+//			}
+//			for (int k = 0; k < 2 * i - 1; k++) {
+//				System.out.print("+");
+//			}
+//			System.out.println();
+//		}
+//
 	}
 
 	public void practice12() {
-		
+
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("정수 입력 : ");
@@ -232,21 +250,36 @@ public class LoopPractice {
 
 		for (int row = star; row >= 1; row--) {
 			for (int col = 1; col <= star; col++) {
-				if (col <= 1 || col >= star || row <= 1 || row >= star ) {
+				if (col <= 1 || col >= star || row <= 1 || row >= star) {
 					System.out.print("*");
 				} else {
-					System.out.print(" ");					
+					System.out.print(" ");
 				}
 			}
 			System.out.println();
 		}
-
-		
 
 	}
 
 	public void practice13() {
 
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("자연수 하나를 입력하세요 : ");
+		int input = sc.nextInt();
+
+		int sum = 0;
+		int count = 0;
+
+		for (int i = 1; i <= input; i++) {
+			if (i % 2 == 0 || i % 3 == 0) {
+				System.out.print(i + " ");
+				if (i % 6 == 0) {
+					count++;
+				}
+			}
+		}
+		System.out.println("\ncount : " + count);
 	}
 
 }
