@@ -317,31 +317,190 @@ public class ForExample {
 		}
 
 	}
-	
+
 	public void ex12() {
-		
+
 		// 구구단 2단부터 9단까지 모두 출력
-		
-		// 2X1=2 2X2=4 2x3=6 ... 
-		// 3X1=3 3X2=6 3x3=9 ... 
-		// 4X1=4 4X2=8 4x3=12 ... 
+
+		// 2X1=2 2X2=4 2x3=6 ...
+		// 3X1=3 3X2=6 3x3=9 ...
+		// 4X1=4 4X2=8 4x3=12 ...
 		// ...
-		// 9X1=9 9X2=18 4x3=27 ... 
-		
+		// 9X1=9 9X2=18 4x3=27 ...
+
 //		for (int dan = 2 ; dan <= 9 ; dan++) {
 //			for (int i = 1 ; i <= 9 ; i++) {
 //				System.out.printf("%dX%d=%d ", dan, i, dan*i);
 //			}
 //			System.out.println();// 줄 바꿈
 //		}
-		
-		for (int i = 2 ; i <= 9 ; i++) {
-			for (int j = 1 ; j <= 9 ; j++) {
-				System.out.printf("%dX%d=%2d ", i, j, i*j);
+
+		for (int i = 2; i <= 9; i++) {
+			for (int j = 1; j <= 9; j++) {
+				System.out.printf("%dX%d=%2d ", i, j, i * j);
 				// %2d : 정수가 출력될 칸을 2칸 확보하고 오른쪽 정렬하여 출력
 			}
 			System.out.println(); // 줄 바꿈
 		}
 	}
+
+	public void ex13() {
+
+		// 2 중 for 문을 이용하여 다음 모양을 출력하세요.
+
+		// 1
+		// 12
+		// 123
+		// 1234
+
+		for (int x = 1; x <= 4; x++) {
+
+			for (int i = 1; i <= x; i++) {
+				System.out.print(i);
+			}
+			System.out.println();
+
+		}
+
+	}
+
+	public void ex14() {
+
+		// 2 중 for 문을 이용하여 다음 모양을 출력하세요.
+
+		// 4
+		// 43
+		// 432
+		// 4321
+
+//		for (int x = 4; x >= 1; x--) {
+//
+//			for (int i = 4; i >= x; i--) {
+//				System.out.print(i);
+//			}
+//			System.out.println();
+//		}
+
+		for (int x = 1; x <= 4; x++) {
+
+			for (int i = 4; i >= 5 - x; i--) {
+				System.out.print(i);
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void ex15() {
+
+		// 2 중 for 문을 이용하여 다음 모양을 출력하세요.
+
+		// 입력된 정수 : 4
+		// 4321
+		// 321
+		// 21
+		// 1
+
+		// 입력된 정수 : 5
+		// 54321
+		// 4321
+		// 321
+		// 21
+		// 1
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("입력된 정수 : ");
+		int input = sc.nextInt();
+
+		for (int x = input; x >= 1; x--) {
+			for (int i = x; i >= 1; i--) {
+				System.out.print(i);
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void ex16() {
+
+		// 2 중 for 문을 이용하여 다음 모양을 출력하세요.
+
+		// * ( 1행 1열 )
+		// ** ( 2행 2열 )
+		// *** ( 3행 3열 )
+		// **** ( 4행 4열 )
+		// ***** ( 5행 5열 )
+
+		// row == 행 ( 한 줄 ), column == 열 ( 한 칸 )
+		for (int row = 1; row <= 5; row++) {
+			for (int col = 1; col <= row; col++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public void ex17() {
+		
+		// 합계 : sum
+		// 개수 : count
+		
+		// * count, %(나머지), for문을 이용한 검색
+		
+		// 1 부터 20 사이의 3의 배수의 개수 출력
+		
+		// ex) 3 6 9 12 15 18
+		// 	   sum   : 63
+		//	   count : 6
+		
+		int sum = 0;
+		int count = 0; // 수를 셀 때는 0 부터 1 씩 증가시키면서 세는 것이 보통
+		
+		for (int i = 1 ; i <= 20 ; i++) {
+			
+			// 3의 배수만 출력
+			if (i % 3 == 0) {
+				System.out.print(i + " ");
+				sum += i; // 누적
+				count++; // 1증가
+			} 
+		}
+		// \n : 개행문자
+		System.out.println("\nsum : " + sum);
+		System.out.println("count : " + count);
+	}
+	
+	
+	public void ex18() {
+		
+		// 2중 for문과 count를 이용해서 아래 모양 출력하기
+		
+		//  1  2  3  4
+		//  5  6  7  8		
+		//  9 10 11 12
+		
+		int count = 1;
+		
+		for (int row = 1 ; row <= 3 ; row++) {
+			for (int col = 1 ; col <= 4 ; col++) {
+				
+//				System.out.printf("%3d", count);
+//				count++;
+				
+				System.out.printf("%3d", count++);
+				// 후위 증감 연산을 이용하여
+				// 출력 후 count 값을 1 증가
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public void ex19() {
+		
+	}
+	
 
 }
