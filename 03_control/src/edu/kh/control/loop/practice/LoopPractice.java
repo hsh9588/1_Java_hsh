@@ -235,38 +235,50 @@ public class LoopPractice {
 		}
 
 		// 풀이
-		/*
-		 * 
-		 * // ex. // 정수 입력 : 4 // * // ** // *** // ****
-		 * 
-		 * // for 문을 이용한 풀이
-		 * 
-		 * for (int row = 1; row <= star ; row++) {
-		 * 
-		 * for (int i = star-1 ; i >= 1 ; i--) {
-		 * 
-		 * // for (int i = star-row ; i >= 1 ; i--) { // star == 4
-		 * 
-		 * System.out.print(" ");
-		 * 
-		 * }
-		 * 
-		 * for (int col = 1 ; col <= row ; col++) { System.out.print("*"); }
-		 * System.out.println(); // 줄 바꿈 }
-		 * 
-		 * // if 문을 이용한 풀이
-		 * 
-		 * for (int row = 1; row <= star ; row++) { for (int col = 1; col <= star ;
-		 * col++) {
-		 * 
-		 * if (col <= star - row) { System.out.print(" ");
-		 * 
-		 * } else { System.out.print("*");
-		 * 
-		 * } } System.out.println(); // 줄 바꿈 }
-		 * 
-		 * 
-		 */
+
+		// ex.
+		// 정수 입력 : 4
+		// *
+		// **
+		// ***
+		// ****
+
+		// for 문을 이용한 풀이
+
+//		for (int row = 1; row <= star; row++) {
+//
+//			for (int i = star - 1; i >= 1; i--) {
+//
+//				// for (int i = star-row ; i >= 1 ; i--) { // star == 4
+//
+//				System.out.print(" ");
+//
+//			}
+//
+//			for (int col = 1; col <= row; col++) {
+//				System.out.print("*");
+//
+//			}
+//
+//			System.out.println(); // 줄 바꿈
+//		}
+
+		// if 문을 이용한 풀이
+
+//		for (int row = 1; row <= star; row++) {
+//			for (int col = 1; col <= star; col++) {
+//
+//				if (col <= star - row) {
+//					System.out.print(" ");
+//
+//				} else {
+//					System.out.print("*");
+//
+//				}
+//			}
+//			System.out.println(); // 줄 바꿈
+//		}
+
 	}
 
 	public void practice10() {
@@ -391,9 +403,9 @@ public class LoopPractice {
 //			}
 //			System.out.println(); // 줄 바꿈
 //		}
-		
+
 		// if문을 이용한 풀이 미완성
-		
+
 //		for (int col = 1 ; col <= input ; col++) {
 //			if (input - row >= col || input + row <= col) {
 //				System.out.print(" ");
@@ -420,17 +432,16 @@ public class LoopPractice {
 			}
 			System.out.println();
 		}
-		
+
 		// 풀이 미완성
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
-		
-		for (int row = 1 ; row <= input ; row++) {
-			for (int col = 1 ; col <= input ; col++) {
-				
+
+		for (int row = 1; row <= input; row++) {
+			for (int col = 1; col <= input; col++) {
+
 			}
 		}
-		
 
 	}
 
@@ -447,9 +458,9 @@ public class LoopPractice {
 		for (int i = 1; i <= input; i++) {
 			if (i % 2 == 0 || i % 3 == 0) {
 				System.out.print(i + " ");
-				
+
 				// 2와 3의 공배수 == 2로도 나누어 떨어지고. 3으로도 나누어 떨어진다.
-				if (i % 6 == 0) { 
+				if (i % 6 == 0) {
 					count++; // count 증가
 				}
 			}
