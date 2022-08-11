@@ -92,41 +92,57 @@ public class LoopPractice {
 		// 풀이
 		// 시작에 앞서 헷갈릴 때에는 안되는 것부터 시작해보자.
 
-		/*
-		 * 방법 1 : if (input1 < 1 || input2 < 1) { // num1, num2 중에 0이 있는가?
-		 * System.out.println("1 이상의 숫자를 입력해주세요/");
-		 * 
-		 * } else { // 둘 다 0이 아니다
-		 * 
-		 * // input1 < input2 for (int i = input1 ; i <= input2 ; i++) {
-		 * System.out.print(i+ " "); } // input1 > input2 for (int i = input2 ; i <=
-		 * input1 ; i++) { System.out.print(i+ " "); } } 방법 2 : if (input1 < 1 || input2
-		 * < 1) { // num1, num2 중에 0이 있는가? System.out.println("1 이상의 숫자를 입력해주세요");
-		 * 
-		 * } else { // 둘 다 0이 아니다 int start = input1; int end = input2;
-		 * 
-		 * if (input1 > input2) { start = input2; end = input1; } for(int i = start ; i
-		 * <= end ; i++) { System.out.print(i + " "); }
-		 * 
-		 * }
-		 * 
-		 * 
-		 * 방법 3 : if (input1 < 1 || input2 < 1) { // num1, num2 중에 0이 있는가?
-		 * System.out.println("1 이상의 숫자를 입력해주세요");
-		 * 
-		 * } else { // 둘 다 0이 아니다
-		 * 
-		 * if ( input1 > input2) {
-		 * 
-		 * int temp = input1;
-		 * 
-		 * input1 = input2;
-		 * 
-		 * input2 = temp; }
-		 * 
-		 * for (int i = input1 ; i <= input2 ; i++) { System.out.print(i + " "); } }
-		 * 
-		 */
+		// 방법 1 :
+//		if (input1 < 1 || input2 < 1) { // num1, num2 중에 0이 있는가?
+//			System.out.println("1 이상의 숫자를 입력해주세요/");
+//
+//		} else { // 둘 다 0이 아니다
+//
+//			// input1 < input2
+//			for (int i = input1; i <= input2; i++) {
+//				System.out.print(i + " ");
+//			} // input1 > input2
+//			for (int i = input2; i <= input1; i++) {
+//				System.out.print(i + " ");
+//			}
+//		}
+		// 방법 2 :
+//		if (input1 < 1 || input2 < 1) { // num1, num2 중에 0이 있는가?
+//			System.out.println("1 이상의 숫자를 입력해주세요");
+//
+//		} else { // 둘 다 0이 아니다
+//			int start = input1;
+//			int end = input2;
+//
+//			if (input1 > input2) {
+//				start = input2;
+//				end = input1;
+//			}
+//			for (int i = start; i <= end; i++) {
+//				System.out.print(i + " ");
+//		}
+//
+//		}
+
+		// 방법 3 :
+		if (input1 < 1 || input2 < 1) { // num1, num2 중에 0이 있는가?
+			System.out.println("1 이상의 숫자를 입력해주세요");
+
+		} else { // 둘 다 0이 아니다
+
+			if (input1 > input2) {
+
+				int temp = input1;
+
+				input1 = input2;
+
+				input2 = temp;
+			}
+
+			for (int i = input1; i <= input2; i++) {
+				System.out.print(i + " ");
+			}
+		}
 
 	}
 
@@ -312,8 +328,8 @@ public class LoopPractice {
 //		**
 //		*
 
-		System.out.print("정수 입력 : ");
-		int input = sc.nextInt();
+//		System.out.print("정수 입력 : ");
+//		int input = sc.nextInt();
 //
 //		// 위쪽 삼각형
 //
@@ -336,23 +352,23 @@ public class LoopPractice {
 //			System.out.println(); // 줄 바꿈
 //		}
 
-		System.out.println("==========================");
+//		System.out.println("==========================");
 
-		// 풀이 아직 미완성
-		for (int row = 1; row <= input * 2 - 1; row++) {
-
-			if (row < input) {
-
-				for (int col = 1; col < row; col++) {
-					System.out.print("*");
-				}
-			} else {
-				for (int col = input; col > row - input; col--) {
-					System.out.print("*");
-				}
-			}
-			System.out.println();
-		}
+		// 풀이
+//		for (int row = 1; row <= input * 2 - 1; row++) {
+//
+//			if (row < input) {
+//
+//				for (int col = 1; col <= row; col++) {
+//					System.out.print("*");
+//				}
+//			} else {
+//				for (int col = input; col > row - input; col--) {
+//					System.out.print("*");
+//				}
+//			}
+//			System.out.println();
+//		}
 
 	}
 
@@ -362,17 +378,6 @@ public class LoopPractice {
 
 		System.out.print("정수 입력 : ");
 		int star = sc.nextInt();
-
-//		for (int row = star; row >= 1; row--) {
-//			for (int col = 1; col <= 2 * star; col++) {
-//				if (row >= col || 10-row <= col) {
-//					System.out.print(" ");
-//				} else {
-//					System.out.print("*");
-//				}
-//			}
-//			System.out.println();
-//		}		
 
 		for (int row = 1; row <= star; row++) {
 			for (int col = 1; col <= star - row; col++) {
@@ -404,15 +409,19 @@ public class LoopPractice {
 //			System.out.println(); // 줄 바꿈
 //		}
 
-		// if문을 이용한 풀이 미완성
-
-//		for (int col = 1 ; col <= input ; col++) {
-//			if (input - row >= col || input + row <= col) {
-//				System.out.print(" ");
-//			} else {
-//				System.out.print("*");
+		// if문을 이용한 풀이
+//		for (int row = 1; row <= input; row++) {
+//
+//			for (int col = 1; col <= input * 2 -1; col++) {
+//				if (input - row >= col || input + row <= col) {
+//					System.out.print(" ");
+//				} else {
+//					System.out.print("*");
+//				}
 //			}
+//			System.out.println();
 //		}
+
 	}
 
 	public void practice12() {
@@ -431,16 +440,6 @@ public class LoopPractice {
 				}
 			}
 			System.out.println();
-		}
-
-		// 풀이 미완성
-		System.out.print("정수 입력 : ");
-		int input = sc.nextInt();
-
-		for (int row = 1; row <= input; row++) {
-			for (int col = 1; col <= input; col++) {
-
-			}
 		}
 
 	}
