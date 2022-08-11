@@ -200,13 +200,113 @@ public class BranchExample {
 			
 			count++;					
 		}
+	}
+	
+	
+	public void rpsGame() {
+		
+		   // 가위 바위 보 게임
+		   
+		   // 몇판? : 3
+		   
+		   // 1번째 게임
+		   // 가위/바위/보 중 하나를 입력 해주세요 :  가위
+		   // 컴퓨터는 [보]를 선택했습니다.
+		   // 플레이어 승!
+		   // 현재 기록 : 1승 0무 0패
+		   
+		   // 2번째 게임
+		   // 가위/바위/보 중 하나를 입력 해주세요 :  보
+		   // 컴퓨터는 [보]를 선택했습니다.
+		   // 비겼습니다.
+		   // 현재 기록 : 1승 1무 0패
+		   
+		   // 3번째 게임
+		   // 가위/바위/보 중 하나를 입력 해주세요 :  가위
+		   // 컴퓨터는 [바위]를 선택했습니다.
+		   // 졌습니다ㅠㅠ
+		   // 현재 기록 : 1승 1무 1패
+		
+		// 힌트 : 가위 바위 보 난수로 만들기 (int)(Math.random()*3)  -> 0(가위) / 1(바위) / 2(보)
+		// input.equals("exit@")
 		
 		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("몇판? : ");
+		
+		int game = sc.nextInt();
+		int count = 0;
+		int rps = (int)(Math.random()*3);
+		String input;
+		String com = "";
+		int me = 0;
+		int win = 0;
+		int lose = 0;
+		int draw = 0;
+		
+		switch (rps) {
+		case 0:
+			com += "가위";
+			break;
+		case 1: 
+			com += "바위";
+			break;
+		case 2: 
+			com += "보";
+			break;
+		default:
+		}
+		
+		
+		for (int pan = 1; pan <= game; pan++) {
+			while ( true ) {
+				count++;
+				System.out.println(count + "번째 게임");
+				
+				System.out.print("가위/바위/보 중 하나를 입력해주세요 : ");
+				input = sc.next();
+				
+				switch (input) {
+				case "가위":
+					me = 0;
+					break;
+				case "바위": 
+					me = 1;
+					break;
+				case "보": 
+					me = 2;
+					break;
+				default:
+				}
+				
+				if (rps == me) {
+					draw++;
+					System.out.println("컴퓨터는 [" + com + "]를 선택했습니다.");
+					System.out.println("비겼습니다.");
+					System.out.printf("현재 기록 : %d승 %d무 %d패\n", win, draw, lose);
+					break;
+				} else if (rps == 0 && me == 1 || rps == 2 && me == 0 || rps == 1 && me == 2) {
+					win++;
+					System.out.println("컴퓨터는 [" + com + "]를 선택했습니다.");
+					System.out.println("이겼습니다.");
+					System.out.printf("현재 기록 : %d승 %d무 %d패\n", win, draw, lose);
+					break;
+				} else {
+					lose++;
+					System.out.println("컴퓨터는 [" + com + "]를 선택했습니다.");
+					System.out.println("졌습니다.ㅠㅠ");
+					System.out.printf("현재 기록 : %d승 %d무 %d패\n", win, draw, lose);
+					break;
+				}
+				
+			}
+			
+		}
 		
 		
 		
 	}
-	
 	
 	
 	
