@@ -8,7 +8,7 @@ public class VariableExample2 {
 		
 		boolean booleanData; 
 		// 논리값(true/false)를 저장할 공간 1byte를
-		//메모리에 할당하고
+		// 메모리에 할당하고
 		//그 공간을 booleanData로 부르겠다.
 		
 		int iNum;
@@ -20,13 +20,13 @@ public class VariableExample2 {
 		// 정수 값을 저장할 공간(8byte)을 메모리에 할당하고
 		// 그 공간을 longNum이라고 부르겠다.
 		
-		//byte와 short는 쓸 일 없다...ㅋ
+		// byte와 short는 쓸 일 없다
 		
 		byte bNum;
 		bNum = 1;
-		//bNum = 128; 이건 범위 넘어서서 안됨
-		//byte 와 short는 거의 사용되지 않는 자료형임. 
-		//사용을 안 하니까 지원이 적음...(별도의 리터럴 표기법이 없어서 int표기법을 사용한다)
+		// bNum = 128; 이건 범위 넘어서서 안됨
+		// byte 와 short는 거의 사용되지 않는 자료형임. 
+		// 사용을 안 하니까 지원이 적음...(별도의 리터럴 표기법이 없어서 int표기법을 사용한다)
 		
 		short sNum;
 		sNum = 1000;
@@ -46,10 +46,11 @@ public class VariableExample2 {
 		char ch2;
 		
 		ch1 = 'A';
-		//char의 리터럴 표기법은 ''(홑따옴표)
+		// char의 리터럴 표기법은 ''(홑따옴표)
 		
 		ch2 = 66; //66은 대문자 B를 뜻함
-		//char 자료형은 숫자-문자 연결되어있는 문자표에서 일치하는 문자나 숫자의 문자부분만 출력을 한다.
+		// char 자료형은 숫자-문자 연결되어있는 문자표에서 일치하는 문자나 
+		// 숫자의 문자부분만 출력을 한다.
 		
 		// 값 대입 : 선언된 변수에 값(리터럴)을 대입하는 것
 		

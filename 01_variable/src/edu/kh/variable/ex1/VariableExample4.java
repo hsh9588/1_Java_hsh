@@ -89,6 +89,10 @@ public class VariableExample4 {
 		
 		System.out.println((int)'A'); // char -> int 강제 형변환		
 		
+		double z = 3.3;
+		int x = (int)z;
+		System.out.println(x);
+		
 	}
 
 }
