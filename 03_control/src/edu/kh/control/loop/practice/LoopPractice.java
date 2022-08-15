@@ -125,24 +125,24 @@ public class LoopPractice {
 //		}
 
 		// 방법 3 :
-		if (input1 < 1 || input2 < 1) { // num1, num2 중에 0이 있는가?
-			System.out.println("1 이상의 숫자를 입력해주세요");
-
-		} else { // 둘 다 0이 아니다
-
-			if (input1 > input2) {
-
-				int temp = input1;
-
-				input1 = input2;
-
-				input2 = temp;
-			}
-
-			for (int i = input1; i <= input2; i++) {
-				System.out.print(i + " ");
-			}
-		}
+//		if (input1 < 1 || input2 < 1) { // num1, num2 중에 0이 있는가?
+//			System.out.println("1 이상의 숫자를 입력해주세요");
+//
+//		} else { // 둘 다 0이 아니다
+//
+//			if (input1 > input2) {
+//
+//				int temp = input1;
+//
+//				input1 = input2;
+//
+//				input2 = temp;
+//			}
+//
+//			for (int i = input1; i <= input2; i++) {
+//				System.out.print(i + " ");
+//			}
+//		}
 
 	}
 
@@ -301,22 +301,22 @@ public class LoopPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-//		System.out.print("정수 입력 : ");
-//		int star = sc.nextInt();
-//
-//		for (int row = 1; row <= star; row++) {
-//			for (int col = 1; col <= row; col++) {
-//				System.out.print("*");
-//			}
-//			System.out.println();
-//		}
-//
-//		for (int row = 1; row <= star; row++) {
-//			for (int col = row; col <= star - 1; col++) {
-//				System.out.print("*");
-//			}
-//			System.out.println();
-//		}
+		System.out.print("정수 입력 : ");
+		int star = sc.nextInt();
+
+		for (int row = 1; row <= star; row++) {
+			for (int col = 1; col <= row; col++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
+		for (int row = 1; row <= star; row++) {
+			for (int col = row; col <= star - 1; col++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
 
 		// 풀이
 

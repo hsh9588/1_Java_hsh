@@ -9,24 +9,24 @@ public class OperatorPractice4 {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("국어 점수를 입력하세요. : ");
-		int korean = sc.nextInt();
+		int kor = sc.nextInt();
 		
 		System.out.print("영어 점수를 입력하세요. : ");
-		int english = sc.nextInt();
+		int eng = sc.nextInt();
 		
 		System.out.print("수학 점수를 입력하세요. : ");
 		int math = sc.nextInt();
 		
-		int total = korean + english + math;
-		double average = total / 3.0;
+		int total = kor + eng + math;
+		double avg = total / 3.0;
 		
 		
 		System.out.println("합계 : " + total);
 		
-		System.out.println("평균 : " + average);
+		System.out.println("평균 : " + avg);
 		
-		String result = korean >= 40 && english >= 40 && math >= 40 &&
-				average >=60 ? "합격" : "불합격";
+		String result = kor >= 40 && eng >= 40 && math >= 40 &&
+				avg >=60 ? "합격" : "불합격";
 		
 		System.out.println(result);
 				
