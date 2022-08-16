@@ -498,9 +498,6 @@ public class ForExample {
 	}
 	
 	
-	public void ex19() {
-		
-	}
 	
 
 }
