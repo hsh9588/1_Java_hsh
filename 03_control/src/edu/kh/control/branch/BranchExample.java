@@ -63,7 +63,7 @@ public class BranchExample {
 	
 	public void ex3() {
 		
-		// "exit@" 문자열이 입력될 떄 까지 문자열 누적하기
+		// "exit@" 문자열이 입력될 때 까지 문자열 누적하기
 		
 		Scanner sc = new Scanner(System.in);
 		

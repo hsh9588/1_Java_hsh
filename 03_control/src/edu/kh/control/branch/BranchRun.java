@@ -9,11 +9,11 @@ public class BranchRun {
 //		branchEx.ex1();
 //		branchEx.ex2();
 //		branchEx.ex3();
-//		branchEx.ex4();
+		branchEx.ex4();
 //		branchEx.ex5();
 //		branchEx.upDownGame();
 //		branchEx.rpsGame();
-		branchEx.rpsGame2();
+//		branchEx.rpsGame2();
 		
 		
 	}
