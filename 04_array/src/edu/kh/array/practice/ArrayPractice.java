@@ -333,14 +333,14 @@ public class ArrayPractice {
 		
 		char yn;
 		
-//		do {
-//		
-//			for (int i = 0; i < arr.length; i++) {
-//				System.out.print((i + 1) + "번째 문자열 : ");
-//				arr[i] = sc.next(); 
-//			}
-//			
-//		} while();
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print((i + 1) + "번째 문자열 : ");
+			arr[i] = sc.next(); 
+		}
+		do {
+		
+			
+		} while(false);
 		
 		
 	}

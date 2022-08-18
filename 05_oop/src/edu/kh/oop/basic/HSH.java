@@ -27,5 +27,6 @@ public class HSH {
 	// public : 같은 프로젝트 내부 누구든, 어디서든 접근 가능
 	public void showPassword() {
 		System.out.println("비밀번호 : ***" + password + "***");
+		
 	}
 }
