@@ -285,76 +285,84 @@ public class ArrayPractice {
 			System.out.print(lotto[i] + " ");
 		}
 	}
-	
-	public void ex13() {		
-		
+
+	public void ex13() {
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		System.out.print("문자열 : ");
 		String str = sc.next();
-		
+
 		char[] ch = new char[str.length()];
-		
+
 		int count = 0;
 		System.out.print("문자열에 있는 문자 : ");
-		
+
 		for (int row = 0; row < ch.length; row++) {
-			
+
 			boolean flag = true;
-			
+
 			for (int col = 0; col < row; col++) {
 				if (ch[col] == str.charAt(row)) {
 					flag = false;
 					break;
-				} 
-			}			
+				}
+			}
 			if (flag) {
 				count++;
 				ch[row] = str.charAt(row);
 				if (row < ch.length - 1) {
-					System.out.print(ch[row] + ", ");					
+					System.out.print(ch[row] + ", ");
 				} else {
 					System.out.print(ch[row]);
 				}
-			}			
+			}
 		}
 		System.out.println("\n문자 개수 : " + count);
-	
+
 	}
-	
+
 	public void ex14() {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		System.out.print("배열의 크기를 입력하세요 : ");
 		int size = sc.nextInt();
-		
+
 		String[] arr = new String[size];
-		
+
 		char yn;
-		
+
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print((i + 1) + "번째 문자열 : ");
-			arr[i] = sc.next(); 
+			arr[i] = sc.next();
 		}
 		do {
-		
-			
-		} while(false);
-		
-		
+
+		} while (false);
+
 	}
-	
+
+	public void ex15() {
+
+		for (int row = 0; row < 3; row++) {
+			for (int col = 0; col < 3; col++) {
+				System.out.printf("(%d, %d)", row, col);
+			}
+			System.out.println();
+		}
+	}
+
 	public void ex16() {
-		
+
 		int count = 0;
-		
+
 		int[][] arr = new int[4][4];
-		
+
 		for (int row = 0; row < arr.length; row++) {
 			for (int col = 0; col < arr[row].length; col++) {
 				count++;
-				arr[row][col]= count;
+				arr[row][col] = count;
 			}
 		}
 		for (int row = 0; row < arr.length; row++) {
@@ -365,4 +373,249 @@ public class ArrayPractice {
 		}
 	}
 
+	public void ex17() {
+
+		int count = 16;
+
+		for (int row = 0; row < 4; row++) {
+			for (int col = 0; col < 4; col++) {
+				System.out.printf("%3d", count);
+				count--;
+			}
+			System.out.println();
+		}
+	}
+
+	public void ex18() {
+
+	}
+
+	public void ex19() {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("행 크기 : ");
+		int row = sc.nextInt();
+
+		System.out.print("열 크기 : ");
+		int col = sc.nextInt();
+
+		char[][] abc = new char[row][col];
+
+		for (int r = 0; r < row; r++) {
+			for (int c = 0; c < col; c++) {
+				int ran = (int) ((Math.random() * 25) + 65);
+				abc[r][c] = (char) ran;
+				System.out.print(abc[r][c] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+	public void ex20() {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("행 크기 : ");
+		int row = sc.nextInt();
+
+		int[][] abcArr = new int[row][];
+
+		char abc = 'a';
+
+		for (int r1 = 0; r1 < row; r1++) {
+			System.out.print(r1 + "열의 크기 : ");
+			int col = sc.nextInt();
+			abcArr[r1] = new int[col];
+		}
+
+		for (int r2 = 0; r2 < row; r2++) {
+			for (int c = 0; c < abcArr[r2].length; c++) {
+				abcArr[r2][c] = abc;
+				System.out.print((char) abcArr[r2][c] + " ");
+				abc++;
+			}
+			System.out.println();
+		}
+	}
+
+	public void ex21() {
+
+		String[] students = { "강건강", "남나나", "도대담", "류라라", "문미미", "박보배", "송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하" };
+
+		String[][] share1 = new String[3][2];
+		String[][] share2 = new String[3][2];
+
+		int count = 0;
+
+		int temp = 0;
+
+		for (int row = 0; row < share1.length; row++) {
+			for (int col = 0; col < share1[row].length; col++) {
+				share1[row][col] = students[count];
+				count++;
+				temp = count;
+			}
+		}
+
+		for (int row = 0; row < share2.length; row++) {
+			for (int col = 0; col < share2[row].length; col++) {
+				share2[row][col] = students[temp];
+				temp++;
+			}
+		}
+
+		System.out.println("** 1분단 **");
+		for (int row = 0; row < share1.length; row++) {
+			for (int col = 0; col < share1[row].length; col++) {
+				System.out.print(share1[row][col] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("** 2분단 **");
+		for (int row = 0; row < share2.length; row++) {
+			for (int col = 0; col < share2[row].length; col++) {
+				System.out.print(share2[row][col] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+	public void ex22() {
+
+		String[] students = { "강건강", "남나나", "도대담", "류라라", "문미미", "박보배", "송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하" };
+
+		String[][] share1 = new String[3][2];
+		String[][] share2 = new String[3][2];
+
+		int count = 0;
+
+		int temp = 0;
+
+		for (int row = 0; row < share1.length; row++) {
+			for (int col = 0; col < share1[row].length; col++) {
+				share1[row][col] = students[count];
+				count++;
+				temp = count;
+			}
+		}
+
+		for (int row = 0; row < share2.length; row++) {
+			for (int col = 0; col < share2[row].length; col++) {
+				share2[row][col] = students[temp];
+				temp++;
+			}
+		}
+
+		System.out.println("** 1분단 **");
+		for (int row = 0; row < share1.length; row++) {
+			for (int col = 0; col < share1[row].length; col++) {
+				System.out.print(share1[row][col] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("** 2분단 **");
+		for (int row = 0; row < share2.length; row++) {
+			for (int col = 0; col < share2[row].length; col++) {
+				System.out.print(share2[row][col] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("===================================");
+
+		System.out.print("검색할 학생의 이름을 입력하세요 : ");
+
+	}
+
+	public void ex23() {
+
+		Scanner sc = new Scanner(System.in);
+
+		String[][] bingo = new String[6][6];
+
+		for (int row = 0; row < bingo.length; row++) {
+			for (int col = 0; col < bingo[row].length; col++) {
+				bingo[row][col] = " ";
+//				System.out.print(bingo[row1][col1]);
+			}
+//			System.out.println();
+		}
+
+		bingo[0][1] = " 0";
+		bingo[0][2] = " 1";
+		bingo[0][3] = " 2";
+		bingo[0][4] = " 3";
+		bingo[0][5] = " 4";
+		bingo[1][0] = "0";
+		bingo[2][0] = "1";
+		bingo[3][0] = "2";
+		bingo[4][0] = "3";
+		bingo[5][0] = "4";
+
+		System.out.print("행 인덱스 입력 : ");
+		int rowInput = sc.nextInt();
+
+		System.out.print("열 인덱스 입력 : ");
+		int colInput = sc.nextInt();
+
+		for (int row = 0; row < bingo.length; row++) {
+			for (int col = 0; col < bingo[row].length; col++) {
+
+				if (row == (rowInput + 1) && col == (colInput + 3)) {
+					bingo[row][col] = " X";
+				}
+				System.out.print(bingo[row][col]);
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void ex24() {
+
+		Scanner sc = new Scanner(System.in);
+
+		String[][] bingo = new String[6][6];
+
+		for (int row = 0; row < bingo.length; row++) {
+			for (int col = 0; col < bingo[row].length; col++) {
+				bingo[row][col] = " ";
+			}
+		}
+
+		bingo[0][1] = " 0";
+		bingo[0][2] = " 1";
+		bingo[0][3] = " 2";
+		bingo[0][4] = " 3";
+		bingo[0][5] = " 4";
+		bingo[1][0] = "0";
+		bingo[2][0] = "1";
+		bingo[3][0] = "2";
+		bingo[4][0] = "3";
+		bingo[5][0] = "4";
+
+		do {
+			System.out.print("행 인덱스 입력 : ");
+			int rowInput = sc.nextInt();
+
+			System.out.print("열 인덱스 입력 : ");
+			int colInput = sc.nextInt();
+
+			for (int row = 0; row < bingo.length; row++) {
+				for (int col = 0; col < bingo[row].length; col++) {
+
+					if (row == (rowInput) && col == (colInput)) {
+						bingo[row+1][col+2] = " X";
+					}
+					System.out.print(bingo[row][col]);
+				}
+				System.out.println();
+			}
+
+		} while (true);
+
+	}
 }

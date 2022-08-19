@@ -47,9 +47,9 @@ public class UserView {
 			switch(input) {
 			case 1: this.signUp(); break;
 			case 2: this.login(); break;
-			case 3: break;
-			case 4: break;
-			case 5: break;
+			case 3: this.logout(); break;
+			case 4: this.printUser(); break;
+			case 5: this.updateUser(); break;
 			case 0: System.out.println("프로그램을 종료합니다 ..."); break;
 			default : System.out.println("잘못 입력 하셨습니다.");
 			}
@@ -112,31 +112,66 @@ public class UserView {
 				loginUser = user; // user 변수가 참조하는 객체의 주소를
 								  // loginUser에 대입( 얕은 복사 )
 			}
-		}
-		
-		
+		}		
 	}
 	
+	// 로그아웃
+	public void logout() {
+		
+		if (loginUser != null) { // 로그인이 되어 있을 경우
+			loginUser = null; // 로그아웃
+			System.out.println("<로그아웃 되었습니다>");
+			
+		} else { // 로그인이 안된 경우
+			System.out.println("로그인 후 이용해주세요.");
+		}
+	}
 	
+	// 로그인 회원정보 출력
+	public void printUser() {
+		System.out.println("[회원 정보 출력]");
+		
+		if (loginUser != null) { // 로그인 o
+			
+			// loginUser 가 참조하는 객체에서 getter를 이용해 필드 값을 얻어와 출력
+			System.out.println("아이디 : " + loginUser.getUserId());
+			System.out.println("이름 : " + loginUser.getUserName());
+			System.out.println("나이 : " + loginUser.getUserAge() + "세");
+			
+			String gender = null;
+			
+			if (loginUser.getUserGender() == 'M') {
+				gender = "남성";
+			} else {
+				gender = "여성";
+			}
+			
+			System.out.println("성별 : " + gender);
+		} else { // 로그인 x
+			System.out.println("로그인 후 이용해주세요.");
+		}
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	// 로그인 회원정보 출력
+	public void updateUser() {
+		System.out.println("[회원 정보 수정]");
+		
+		if (loginUser != null) { // 로그인 o
+			System.out.print("수정할 이름 : ");
+			String name = sc.next();
+			
+			System.out.print("수정할 나이 : ");
+			int age = sc.nextInt();
+			
+			System.out.print("수정할 성별(M/F) : ");
+			char gender = sc.next().charAt(0);
+			
+			service.updateUser(name, age, gender, loginUser);
+			
+			System.out.println("<회원 정보가 수정되었습니다.>");
+			
+		} else { // 로그인 x
+			System.out.println("로그인 후 이용해주세요.");			
+		}
+	}
 }
