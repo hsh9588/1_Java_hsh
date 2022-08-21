@@ -698,7 +698,10 @@ public class ArrayPractice {
 			}
 
 		} while (true);
+	}
+	
+	public void bingoGame() {
 		
-
+		
 	}
 }

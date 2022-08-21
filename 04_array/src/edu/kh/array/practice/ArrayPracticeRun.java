@@ -29,7 +29,8 @@ public class ArrayPracticeRun {
 //		ap.ex21();
 //		ap.ex22();
 //		ap.ex23();
-		ap.ex24();
+//		ap.ex24();
+		ap.bingoGame();
 		
 	}
 }
