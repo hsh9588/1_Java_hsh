@@ -19,7 +19,7 @@ public class ArrayPracticeRun {
 //		ap.ex11();
 //		ap.ex12();
 //		ap.ex13();
-		ap.ex14();
+//		ap.ex14();
 //		ap.ex15();
 //		ap.ex16();
 //		ap.ex17();
@@ -29,7 +29,7 @@ public class ArrayPracticeRun {
 //		ap.ex21();
 //		ap.ex22();
 //		ap.ex23();
-//		ap.ex24();
+		ap.ex24();
 		
 	}
 }

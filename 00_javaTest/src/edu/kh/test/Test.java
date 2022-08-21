@@ -5,22 +5,19 @@ import java.util.Scanner;
 public class Test {
 
 	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
-
-		System.out.print("숫자 : ");
-		int input = sc.nextInt(); // 4
-
-		for (int row = 1; row <= input; row++) {
-			for (int col = 1; col <= input; col++) {
-				if (row == 1 || row == input || col == 1 || col == input) {
-					System.out.print("*");					
-				} else {
-					System.out.print(" ");	
-				}
-			}
-			System.out.println();
+		
+		int[] arr1 = new int[10];
+		int[] arr2 = new int[20];
+		
+		arr1 = arr2;
+		
+		for (int row = 0; row < arr1.length; row++) {
+			System.out.print(arr1[row] + " ");
 		}
+		
+
+
+
 	}
 }
 /*

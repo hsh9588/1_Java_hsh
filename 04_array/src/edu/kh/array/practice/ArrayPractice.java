@@ -328,18 +328,60 @@ public class ArrayPractice {
 
 		System.out.print("배열의 크기를 입력하세요 : ");
 		int size = sc.nextInt();
+		sc.nextLine();
+		
+		boolean flag = false;
 
-		String[] arr = new String[size];
+		String[] arr1 = new String[size];
+		String[] arrTemp = arr1;
 
 		char yn;
 
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < arr1.length; i++) {
 			System.out.print((i + 1) + "번째 문자열 : ");
-			arr[i] = sc.next();
+			arr1[i] = sc.nextLine();
 		}
 		do {
+			
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			yn = sc.next().charAt(0);
+			
+			if (yn == 'y') {
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int size2 = sc.nextInt();
+				sc.nextLine();
+				
+				String[] arr2 = new String[arr1.length+size2];				
+				
+				arrTemp = arr1;
+				arr1 = arr2;
+				
+				for (int row = arrTemp.length; row < arr1.length; row++) {
+					System.out.print((row + 1) + "번째 문자열 : ");
+					arr1[row] = sc.nextLine();
+				}
+				
+				
+				for (int row = 0; row < arrTemp.length; row++) {
+					arr1[row] = arrTemp[row];
+				}
+				
+				
+				flag= true;
+			} else {
+				for (int row = 0; row < arr1.length; row++) {
+					if (row == 0) {
+						System.out.print("[" + arr1[row] + ", ");						
+					} else if (row == (arr1.length-1)) {
+						System.out.print(arr1[row] + "]");						
+					} else {
+						System.out.print(arr1[row] + ", ");						
+					}
+					flag= false;
+				}
+			}
 
-		} while (false);
+		} while (flag);
 
 	}
 
@@ -483,6 +525,8 @@ public class ArrayPractice {
 	}
 
 	public void ex22() {
+		
+		Scanner sc = new Scanner(System.in);
 
 		String[] students = { "강건강", "남나나", "도대담", "류라라", "문미미", "박보배", "송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하" };
 
@@ -526,8 +570,36 @@ public class ArrayPractice {
 
 		System.out.println("===================================");
 
-		System.out.print("검색할 학생의 이름을 입력하세요 : ");
+		System.out.print("검색할 학생의 이름을 입력하세요 : ");			
+		String find = sc.next();
+		
+		for (int row = 0; row < share1.length; row++) {
+			for (int col = 0; col < share1[row].length; col++) {
+				if (share1[row][col].equals(find)) {
+					System.out.printf("검색하신 %s 학생은 1분단 %d번째 줄 ", share1[row][col], (row + 1));
+					
+					if (col == 0) {
+						System.out.print("왼쪽에 있습니다.");
+					} else {
+						System.out.println("오른쪽에 있습니다.");
+					}
+				}
+			}
+		}
 
+		for (int row = 0; row < share2.length; row++) {
+			for (int col = 0; col < share2[row].length; col++) {
+				if (share2[row][col].equals(find)) {
+					System.out.printf("검색하신 %s 학생은 2분단 %d번째 줄 ", share2[row][col], (row + 1));
+					
+					if (col == 0) {
+						System.out.print("왼쪽에 있습니다.");
+					} else {
+						System.out.println("오른쪽에 있습니다.");
+					}
+				}
+			}
+		}
 	}
 
 	public void ex23() {
@@ -536,14 +608,15 @@ public class ArrayPractice {
 
 		String[][] bingo = new String[6][6];
 
-		for (int row = 0; row < bingo.length; row++) {
-			for (int col = 0; col < bingo[row].length; col++) {
-				bingo[row][col] = " ";
+		for (int row = 1; row < bingo.length; row++) {
+			for (int col = 1; col < bingo[row].length; col++) {
+				bingo[row][col] = "  ";
 //				System.out.print(bingo[row1][col1]);
 			}
 //			System.out.println();
 		}
-
+		
+		bingo[0][0] = " ";
 		bingo[0][1] = " 0";
 		bingo[0][2] = " 1";
 		bingo[0][3] = " 2";
@@ -564,7 +637,7 @@ public class ArrayPractice {
 		for (int row = 0; row < bingo.length; row++) {
 			for (int col = 0; col < bingo[row].length; col++) {
 
-				if (row == (rowInput + 1) && col == (colInput + 3)) {
+				if (row == (rowInput+1) && col == (colInput+1)) {
 					bingo[row][col] = " X";
 				}
 				System.out.print(bingo[row][col]);
@@ -575,17 +648,20 @@ public class ArrayPractice {
 	}
 
 	public void ex24() {
-
+		
 		Scanner sc = new Scanner(System.in);
 
 		String[][] bingo = new String[6][6];
 
 		for (int row = 0; row < bingo.length; row++) {
 			for (int col = 0; col < bingo[row].length; col++) {
-				bingo[row][col] = " ";
+				bingo[row][col] = "  ";
 			}
 		}
-
+		
+		boolean flag = true;
+		
+		bingo[0][0] = " ";
 		bingo[0][1] = " 0";
 		bingo[0][2] = " 1";
 		bingo[0][3] = " 2";
@@ -601,14 +677,20 @@ public class ArrayPractice {
 			System.out.print("행 인덱스 입력 : ");
 			int rowInput = sc.nextInt();
 
+			if (rowInput == 99) {
+				System.out.println("프로그램 종료");
+				break;
+			}
+			
 			System.out.print("열 인덱스 입력 : ");
 			int colInput = sc.nextInt();
+			
 
 			for (int row = 0; row < bingo.length; row++) {
 				for (int col = 0; col < bingo[row].length; col++) {
 
-					if (row == (rowInput) && col == (colInput)) {
-						bingo[row+1][col+2] = " X";
+					if (row == (rowInput+1) && col == (colInput+1)) {
+						bingo[row][col] = " X";
 					}
 					System.out.print(bingo[row][col]);
 				}
@@ -616,6 +698,7 @@ public class ArrayPractice {
 			}
 
 		} while (true);
+		
 
 	}
 }
