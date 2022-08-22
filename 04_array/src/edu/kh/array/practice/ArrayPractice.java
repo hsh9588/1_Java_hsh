@@ -1,5 +1,6 @@
 package edu.kh.array.practice;
 
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class ArrayPractice {
@@ -702,6 +703,73 @@ public class ArrayPractice {
 	
 	public void bingoGame() {
 		
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("빙고판 크기 지정 : ");
+		int size = sc.nextInt();
+		
+		int[] arrTemp = new int[(size * size)];
+		
+		int inputCount = 0;
+		
+		int[][] bingo = new int[size][size];
+		
+		
+		for (int r = 0; r < arrTemp.length; r++) {
+			
+			int ran = ((int)(Math.random()* (size * size)) + 1) ;
+			
+			arrTemp[r] = ran;			
+			
+			for (int c = 0; c < r; c++) {
+				if (arrTemp[c] == ran) {
+					r--;
+					break;
+				}
+				
+			}
+				
+		}
+		
+		for (int r = 0; r < bingo.length; r++) {
+			for (int c = 0; c < bingo[r].length; c++) {
+				bingo[r][c] = arrTemp[inputCount];
+				inputCount++;
+			}
+		}
+		
+		for (int r = 0; r < bingo.length; r++) {
+			for (int c = 0; c < bingo[r].length; c++) {
+				System.out.printf("%4d", bingo[r][c]);
+			}
+			System.out.println();
+		}
+		
+		System.out.println("===== 빙고게임 시작 =====");
+		
+		System.out.print("정수를 입력하시오 : ");
+		int input = sc.nextInt();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
