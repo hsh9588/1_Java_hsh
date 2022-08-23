@@ -1,6 +1,9 @@
 package edu.kh.inheritance.model.vo;
 
-public class Person {
+public class Person extends Object { // 자식이 공통적으로 가지고 있는 필드 / 메서드 작성함 ( 추상화 )
+	
+	// extends Object -> 상속 구문이 작성되지 않으면
+	//					컴파일러가 자동 추가해준다.
 	
 	private String name;
 	private int age;
@@ -30,6 +33,11 @@ public class Person {
 		this.age = age;
 	}
 	
+	// 자기소개 기능	
+	public void introduce() {
+		System.out.println("이름 : " + name);
+		System.out.println("나이 : " + age);
+	}
 	
 
 }
