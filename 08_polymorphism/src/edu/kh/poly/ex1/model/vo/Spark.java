@@ -24,5 +24,8 @@ public class Spark extends Car {
 		return super.toString() + " / 할인혜택 : " + discountOffer;
 	}
 	
+	public void dc() {
+		System.out.println(discountOffer * 100 + "% 할인됩니다.");
+	}
 
 }

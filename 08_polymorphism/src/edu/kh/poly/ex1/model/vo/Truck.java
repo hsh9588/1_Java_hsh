@@ -30,4 +30,9 @@ public class Truck extends Car {
 		return super.toString() + " / 적재중량 : " + weight; 
 				// wheel : 4 / seat : 5 / fuel : 경유 / 적재중량 : 1.5
 	}
+	
+	public void loading() {
+		System.out.println("물건을 실을 수 있다.");
+	}
+	
 }
