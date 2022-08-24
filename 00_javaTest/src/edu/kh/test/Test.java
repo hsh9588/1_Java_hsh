@@ -14,9 +14,6 @@ public class Test {
 		for (int row = 0; row < arr1.length; row++) {
 			System.out.print(arr1[row] + " ");
 		}
-		
-
-
 
 	}
 }
