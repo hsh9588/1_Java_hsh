@@ -111,7 +111,7 @@ public class Student {
 	@Override
 	public int hashCode() {
 		return Objects.hash(address, age, gender, name, score);
-	}
+	} // 필드가 모두 동일하면 같은 숫자가 반환된다.
 
 	@Override
 	public boolean equals(Object obj) {

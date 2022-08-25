@@ -3,7 +3,7 @@ package edu.kh.inheritance.model.vo;
 public class Student extends Person {
 	
 	// 자식 Student 클레스에
-	// 부모 Person 클래스의 멤버( 필드, 메서드) 를 상속
+	// 부모 Person 클래스의 멤버( 필드, 메서드 ) 를 상속
 	
 	// extends : 확장하다.
 	// -> 자식이 자기의 멤버 + 부모의 멤버를 가지게 되어
@@ -103,7 +103,7 @@ public class Student extends Person {
 	
 
 	// @Override
-	// 1) 컴파일러에게 해당 메서드는 오버라디이 되었음을 알려줌
+	// 1) 컴파일러에게 해당 메서드는 오버라이딩 되었음을 알려줌
 	// 2) 오버라이딩이 가능한지, 잘못 작성되지 않았는지 검사
 	
 	// 오버 로딩 : 매개변수 타입, 개수, 순서 1개라도 달라야 한다.
