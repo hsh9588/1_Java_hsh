@@ -63,4 +63,21 @@ public class Test {
  *  - 접점 의미 추가
  *  - 클래스 선언부 변경( class -> interface )
  *  - 필드/메서드 작성법이 고정
+ *  
+ *  
+ *  
+ *  20220806 필기
+ *  
+ *  <T> 제네릭
+ *  향상된 for문 : for(참조변수 : 배열 또는 컬렉션) {}
+ *  			Iterator(반복자)
+ *  
+ *  Collection : 자바의 자료구조 모음
+ *  List : 순서 유지(인덱스o), 중복 데이터 o
+ *  Set : 순서 x(인덱스 x). 중복 데이터 x
+ *  	-> equals(), hashCode() 오버라이딩 필요
+ *  Map : 
+ *  
+ *  Server : 서비스를 제공하는 컴퓨터(프로그램)
+ *  Client : 서비스를 요청하는 컴퓨터(프로그램)
  */
