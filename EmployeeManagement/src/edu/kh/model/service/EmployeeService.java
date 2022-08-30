@@ -63,15 +63,16 @@ public class EmployeeService {
 	 */
 	public boolean updateEmployee(int empId, String departmentTitle, String jobName, int salary) {
 		
+		int count = 0;
 		boolean result = false;
 		for (Employee e : empList) {
 			if (empId == e.getEmpld()) {
-				empList.get(empId).setDepartmentTitle(departmentTitle);
-				empList.get(empId).setJobName(jobName);
-				empList.get(empId).setSalary(salary);
+				empList.get(count).setDepartmentTitle(departmentTitle);
+				empList.get(count).setJobName(jobName);
+				empList.get(count).setSalary(salary);
 				result =  true;
-				break;
 			}
+			count++;
 			
 		}
 			return result;
