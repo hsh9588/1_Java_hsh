@@ -1,4 +1,4 @@
-package edu.kh.collection.medel.service;
+package edu.kh.collection.model.service;
 
 import java.util.HashSet;
 import java.util.Iterator;
