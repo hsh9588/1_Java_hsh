@@ -77,5 +77,22 @@ public class EmployeeService {
 		}
 			return result;
 	}
+	
+	public boolean removeEmployee(int empId) {
+		
+		int count = 0;
+		boolean result = false;
+		for (Employee e : empList) {
+			if (empId == e.getEmpld()) {
+//				empList.get(count).setDepartmentTitle(departmentTitle);
+//				empList.get(count).setJobName(jobName);
+//				empList.get(count).setSalary(salary);
+				result =  true;
+			}
+			count++;
+			
+		}
+			return result;
+	}
 
 }

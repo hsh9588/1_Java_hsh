@@ -141,5 +141,22 @@ public class EmployeeView {
 		}
 	}
 	
+	/**
+	 * 사번이 일치하는 사원 정보 삭제
+	 */
+	public void removeEmployee() {
+		System.out.println("[사번이 일치하는 사원 정보 삭제]");
+		
+		System.out.print("사원 번호 : ");
+		int empId = sc.nextInt();
+		sc.nextLine();
+		
+		if (service.removeEmployee(empId)) {
+			System.out.println("수정 완료");
+		} else {
+			System.out.println("실패 ~! 해당 사원 번호와 일치하는 사원이 없습니다니께");
+		}
+	}
+	
 
 }
