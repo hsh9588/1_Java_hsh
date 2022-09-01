@@ -87,6 +87,7 @@ public class EmployeeService {
 //				empList.get(count).setDepartmentTitle(departmentTitle);
 //				empList.get(count).setJobName(jobName);
 //				empList.get(count).setSalary(salary);
+				empList.remove(count);
 				result =  true;
 			}
 			count++;

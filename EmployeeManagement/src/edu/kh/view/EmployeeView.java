@@ -40,7 +40,7 @@ public class EmployeeView {
 			case 2: selectAll(); break;
 			case 3: selectEmpid(); break;
 			case 4: updateEmployee(); break;
-			case 5: break;
+			case 5: removeEmployee(); break;
 			case 6: break;
 			case 7: break;
 			case 8: break;
