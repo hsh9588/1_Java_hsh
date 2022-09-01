@@ -137,7 +137,7 @@ public class EmployeeView {
 		if (service.updateEmployee(empId, departmentTitle, jobName, salary)) {
 			System.out.println("수정 완료");
 		} else {
-			System.out.println("실패 ~! 해당 사원 번호와 일치하는 사원이 없습니다니께");
+			System.out.println("실패 ~! 해당 사원 번호와 일치하는 사원이 없습니다");
 		}
 	}
 	
@@ -152,9 +152,29 @@ public class EmployeeView {
 		sc.nextLine();
 		
 		if (service.removeEmployee(empId)) {
-			System.out.println("수정 완료");
+			System.out.println("삭제 완료");
 		} else {
-			System.out.println("실패 ~! 해당 사원 번호와 일치하는 사원이 없습니다니께");
+			System.out.println("실패 ~! 해당 사원 번호와 일치하는 사원이 없습니다");
+		}
+	}
+	
+	/** 입력 받은 부서와 일치 모든 사원 정보 조회
+	 * 
+	 */
+	public void selectDptTitle() {
+		System.out.println("입력 받은 부서와 일치 모든 사원 정보 조회");
+		
+		System.out.print("부서 명 : ");
+		String name = sc.next();
+		
+		List<Employee> resultList = service.selectDptTitle(name);
+		
+		if (resultList.isEmpty()) {
+			System.out.println("검색 결과가 없습니다.");
+		} else {
+			for (Employee e : resultList) {
+				System.out.println(e);
+			}
 		}
 	}
 	

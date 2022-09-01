@@ -54,12 +54,12 @@ public class EmployeeService {
 		return resultList; 
 	}
 	
-	/**
+	/** 사번이 일치하는 사원 정보 수정
 	 * @param empId
 	 * @param departmentTitle
 	 * @param jobName
 	 * @param salary
-	 * @return
+	 * @return result
 	 */
 	public boolean updateEmployee(int empId, String departmentTitle, String jobName, int salary) {
 		
@@ -78,15 +78,16 @@ public class EmployeeService {
 			return result;
 	}
 	
+	/** 사번이 일치하는 사원 정보 제거
+	 * @param empId
+	 * @return result
+	 */
 	public boolean removeEmployee(int empId) {
 		
 		int count = 0;
 		boolean result = false;
 		for (Employee e : empList) {
 			if (empId == e.getEmpld()) {
-//				empList.get(count).setDepartmentTitle(departmentTitle);
-//				empList.get(count).setJobName(jobName);
-//				empList.get(count).setSalary(salary);
 				empList.remove(count);
 				result =  true;
 			}
