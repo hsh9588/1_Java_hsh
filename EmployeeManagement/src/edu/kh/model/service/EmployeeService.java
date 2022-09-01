@@ -73,7 +73,6 @@ public class EmployeeService {
 				result =  true;
 			}
 			count++;
-			
 		}
 			return result;
 	}
@@ -90,11 +89,43 @@ public class EmployeeService {
 			if (empId == e.getEmpld()) {
 				empList.remove(count);
 				result =  true;
+				break;
 			}
 			count++;
-			
 		}
 			return result;
+	}
+	
+	/**
+	 * @param dptName
+	 * @return resultList
+	 */
+	public List<Employee> selectDptTitle(String dptName){
+		
+		List<Employee> resultList = new ArrayList<>();
+		
+		for (Employee e : empList) {
+			if (e.getDepartmentTitle().equals(dptName)) {
+				resultList.add(e);
+			}
+		}
+		return resultList;
+	}
+	
+	/**
+	 * @param salary
+	 * @return resultList
+	 */
+	public List<Employee> selectSalary(int salary){
+		
+		List<Employee> resultList = new ArrayList<>();
+		
+		for (Employee e : empList) {
+			if (e.getSalary() >= salary) {
+				resultList.add(e);
+			}
+		}
+		return resultList;
 	}
 
 }

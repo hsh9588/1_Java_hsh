@@ -41,8 +41,8 @@ public class EmployeeView {
 			case 3: selectEmpid(); break;
 			case 4: updateEmployee(); break;
 			case 5: removeEmployee(); break;
-			case 6: break;
-			case 7: break;
+			case 6: selectDptTitle(); break;
+			case 7: selectSalary(); break;
 			case 8: break;
 			case 0: System.out.println("프로그램 종료"); break;
 			default: System.out.println("잘못 입력 하셨습니다.");
@@ -162,12 +162,12 @@ public class EmployeeView {
 	 * 
 	 */
 	public void selectDptTitle() {
-		System.out.println("입력 받은 부서와 일치 모든 사원 정보 조회");
+		System.out.println("[입력 받은 부서와 일치 모든 사원 정보 조회]");
 		
 		System.out.print("부서 명 : ");
-		String name = sc.next();
+		String dptName = sc.next();
 		
-		List<Employee> resultList = service.selectDptTitle(name);
+		List<Employee> resultList = service.selectDptTitle(dptName);
 		
 		if (resultList.isEmpty()) {
 			System.out.println("검색 결과가 없습니다.");
@@ -176,6 +176,27 @@ public class EmployeeView {
 				System.out.println(e);
 			}
 		}
+	}
+	
+	/** 입력 받은 급여 이상을 받는 모든 사원 정보 조회
+	 * 
+	 */
+	public void selectSalary() {
+		System.out.println("[입력 받은 급여 이상을 받는 모든 사원 정보 조회]");
+		
+		System.out.print("급여 : ");
+		int salary = sc.nextInt();
+		
+		List<Employee> resultList = service.selectSalary(salary);
+		
+		if (resultList.isEmpty()) {
+			System.out.println("검색 결과가 없습니다.");
+		} else {
+			for (Employee e : resultList) {
+				System.out.println(e);
+			}
+		}
+		
 	}
 	
 
