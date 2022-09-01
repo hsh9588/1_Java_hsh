@@ -43,7 +43,7 @@ public class EmployeeView {
 			case 5: removeEmployee(); break;
 			case 6: selectDptTitle(); break;
 			case 7: selectSalary(); break;
-			case 8: break;
+			case 8: departSum(); break;
 			case 0: System.out.println("프로그램 종료"); break;
 			default: System.out.println("잘못 입력 하셨습니다.");
 			}
@@ -77,6 +77,7 @@ public class EmployeeView {
 		
 		
 		if (service.addEmployee(empId, empName, empNo, email, phone)) {
+			
 			System.out.println("[추가 완료]");
 		} else {
 			System.out.println("[error] 학생 정보 추가 실패");
@@ -197,6 +198,25 @@ public class EmployeeView {
 			}
 		}
 		
+	}
+	
+	//부서별 급여 합 전체 조회
+	
+	public void departSum() {
+		System.out.println("[부서별 급여 합 전체 조회]");
+		
+		System.out.print("부서 : ");
+		String departName = sc.next();
+		
+		int resultList = service.departSum(departName);
+		
+		if (resultList < 0) {
+			System.out.println("잘못 입력 하셨습니다.");
+		} else {
+				System.out.println(departName +"부서 총 지급액 : " + resultList + "원 입니다.");
+			
+		}
+				
 	}
 	
 

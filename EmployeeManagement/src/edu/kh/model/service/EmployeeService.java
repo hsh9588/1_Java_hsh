@@ -1,7 +1,9 @@
 package edu.kh.model.service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import edu.kh.model.vo.Employee;
 
@@ -10,7 +12,10 @@ public class EmployeeService {
 	private List<Employee> empList = new ArrayList<>();
 	
 	public EmployeeService() {
-//		empList.add(new Employee(0, "Test", "123456-1234567", "test@test.com", "010-1111-1111"));
+		empList.add(new Employee(1, "선동일", "621231-1985634", "sun_di@or.kr", "010-9954-6325", "D9", "J1", 8000000));
+		empList.add(new Employee(2, "송종기", "631112-1548654", "song_jk@or.kr", "010-4568-6656", "D9", "J1", 6000000));
+		empList.add(new Employee(3, "노흉철", "861015-1356452", "no_hc@or.kr", "010-6665-6263", "D6", "J2", 3700000));
+		empList.add(new Employee(4, "송곤희", "631010-2653546", "song_eh@or.kr", "010-77607879", "D6", "J2", 2800000 ));
 	}
 	
 	/** empList에 사원 정보 추가 메서드
@@ -19,15 +24,20 @@ public class EmployeeService {
 	 * @param empNo
 	 * @param email
 	 * @param phone
-	 * @return
-	 * @true  : 사원 정보 추가 성공
-	 * @false : 사원 정보 추가 실패 
+	 * @return 
 	 */
 	public boolean addEmployee(int empId, String empName, String empNo, String email, String phone) {
 		
+		for (Employee e : empList) {
+			
+			if (e.getEmpld() == empId ) {
+				return false;
+			}
+		}
 		Employee emp = new Employee(empId, empName, empNo, email, phone);
 		
-		return empList.add(emp);
+		return empList.add(emp);			
+			
 	}
 	
 	/** 사원 전체 조회 시 empList 반환 메서드 
@@ -128,4 +138,16 @@ public class EmployeeService {
 		return resultList;
 	}
 
+	public int departSum(String departName){
+		
+		List<Employee> resultList = new ArrayList<>();
+		
+		int sum = 0;
+		for (Employee e : empList) {
+			if (e.getDepartmentTitle().equals(departName) ) {
+				sum += e.getSalary();
+			}
+		}
+		return sum;
+	}
 }
